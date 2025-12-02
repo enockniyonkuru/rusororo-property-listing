@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House for Sale/Rent - Rusororo, Rwanda</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #27ae60;
+            --text-light: #ecf0f1;
+            --text-dark: #333;
+            --bg-light: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            padding: 5px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .lang-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .left-content {
+            min-height: auto;
+        }
+
+        .property-header {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+
+        .property-header h1 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .property-address {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            color: var(--text-dark);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price-secondary {
+            font-size: 1rem;
+            color: #666;
+            margin-left: 10px;
+        }
+
+        .btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 10px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #219150;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        /* Property Stats */
+        .property-stats {
+            display: flex;
+            gap: 30px;
+            margin: 15px 0;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stat-number {
+            font-weight: bold;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Property Details Grid */
+        .property-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .details-main {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .right-sidebar {
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .form-group textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        .contact-buttons {
+            display: grid;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .contact-buttons .btn {
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            background: var(--bg-light);
+            border-radius: 5px;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .spec-value {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .description {
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .amenities-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .amenity-item {
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Photo Gallery - Realtor.com Style */
+        .photo-gallery {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .photo-count {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .gallery-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2px;
+            height: 280px;
+        }
+
+        .main-photo {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .main-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .main-photo:hover img {
+            transform: scale(1.02);
+        }
+
+        .photo-thumbnails {
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            gap: 2px;
+            width: 100%;
+        }
+
+        .thumbnail-photo {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .thumbnail-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+
+        .thumbnail-photo:hover img {
+            transform: scale(1.05);
+        }
+
+        .thumbnail-photo.more-photos {
+            position: relative;
+        }
+
+        .thumbnail-photo.more-photos::after {
+            content: attr(data-count);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .view-all-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .view-all-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        /* Enhanced Photo Modal */
+        .photo-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .modal-caption {
+            color: white;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .modal-counter {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            padding: 8px 12px;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .close-modal:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .modal-nav:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .modal-prev {
+            left: 20px;
+        }
+
+        .modal-next {
+            right: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 10px;
+            }
+            
+            .right-sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.8rem 3%;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            nav .logo { font-size: 1.2rem; }
+            
+            nav ul { display: none; }
+            
+            .language-switcher {
+                width: 100%;
+                gap: 5px;
+                justify-content: center;
+            }
+            
+            .lang-btn {
+                padding: 4px 10px;
+                font-size: 0.8rem;
+            }
+            
+            .main-layout {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 8px;
+            }
+            
+            .property-header h1 { font-size: 1.3rem; }
+            
+            .price-tag { font-size: 1.5rem; }
+            
+            .property-stats {
+                flex-wrap: wrap;
+                gap: 15px;
+                margin: 10px 0;
+                padding: 10px 0;
+            }
+            
+            .gallery-main {
+                grid-template-columns: 1fr;
+                height: auto;
+                max-height: 250px;
+            }
+            
+            .photo-thumbnails {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 80px;
+                height: 80px;
+            }
+            
+            .details-main {
+                padding: 15px;
+            }
+            
+            .specs-grid { grid-template-columns: 1fr; }
+            
+            .amenities-list { grid-template-columns: 1fr; }
+            
+            .contact-form {
+                padding: 15px;
+            }
+            
+            .contact-form h3 {
+                font-size: 1.1rem;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Rusororo Living</div>
+        <div style="display: flex; gap: 30px; align-items: center;">
+            <ul>
+                <li><a href="#home" data-en="Home" data-rw="Ahabanza">Home</a></li>
+                <li><a href="#details" data-en="Details" data-rw="Amakuru">Details</a></li>
+                <li><a href="#gallery" data-en="Gallery" data-rw="Amafoto">Gallery</a></li>
+                <li><a href="#contact" data-en="Contact" data-rw="Twandikire">Contact</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="switchLanguage('en')">English</button>
+                <button class="lang-btn" onclick="switchLanguage('rw')">Kinyarwanda</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <div class="left-content">
+            <!-- Property Header -->
+            <div class="property-header">
+                <h1 data-en="Beautiful 4 Bedroom Home in Rusororo, Kigali" data-rw="Inzu Nziza Ifite Ibyumba 4 i Rusororo, Kigali">Beautiful 4 Bedroom Home in Rusororo, Kigali</h1>
+                <div class="property-address" data-en="Rusororo, Gasabo District, Kigali, Rwanda" data-rw="Rusororo, Akarere ka Gasabo, Kigali, Rwanda">Rusororo, Gasabo District, Kigali, Rwanda</div>
+                <div class="price-tag">
+                    100,000,000 RWF
+                    <span class="price-secondary" data-en="($70,000 USD)" data-rw="($70,000 Amadorali)">($70,000 USD)</span>
+                </div>
+                <div class="property-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label" data-en="beds" data-rw="ibyumba">beds</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label" data-en="baths" data-rw="ubwiyuhagiro">baths</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2,800</span>
+                        <span class="stat-label" data-en="sqft" data-rw="m²">sqft</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">0.12</span>
+                        <span class="stat-label" data-en="acres" data-rw="hegitari">acres</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="photo-gallery">
+                <div class="gallery-header">
+                    <h3 class="gallery-title" data-en="Photos" data-rw="Amafoto">Photos</h3>
+                    <span class="photo-count">25+ photos</span>
+                </div>
+                <div class="gallery-main">
+                    <div class="main-photo" onclick="openPhotoModal(0)">
+                        <img src="house_photos/Hos1.jpg" alt="Main house view">
+                        <button class="view-all-btn" data-en="View all photos" data-rw="Reba amafoto yose">View all photos</button>
+                    </div>
+                    <div class="photo-thumbnails">
+                        <div class="thumbnail-photo" onclick="openPhotoModal(1)">
+                            <img src="house_photos/Hos2.jpg" alt="Exterior view">
+                        </div>
+                        <div class="thumbnail-photo" onclick="openPhotoModal(2)">
+                            <img src="house_photos/Hos3.jpg" alt="Living room">
+                        </div>
+                        <div class="thumbnail-photo" onclick="openPhotoModal(3)">
+                            <img src="house_photos/Hos4.jpg" alt="Kitchen">
+                        </div>
+                        <div class="thumbnail-photo more-photos" onclick="openPhotoModal(4)" data-count="+20">
+                            <img src="house_photos/Hos5.jpg" alt="More photos">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Details -->
+            <div class="details-main">
+                <h2 class="section-title" data-en="Property Overview" data-rw="Incamake y'Inzu">Property Overview</h2>
+                
+                <div class="description">
+                    <p data-en="This stunning 4-bedroom, 3-bathroom home is located in the sought-after neighborhood of Rusororo in Gasabo District, Kigali. Built in 2025, this modern property features 2,800 square feet of living space on a 0.12-acre lot with beautiful views of the surrounding hills." 
+                       data-rw="Iyi nzu nziza ifite ibyumba 4 byo kuraramo, ibyumba 3 byo kwiyuhagiramo iherereye mu gace gishakwa cya Rusororo mu karere ka Gasabo, Kigali. Yubatswe mu 2025, iyi nzu igezweho ifite metero kare 2,800 z'aho gutura kuri hegitari 0.12 ifite amashusho meza y'imisozi ikikije.">
+                        This stunning 4-bedroom, 3-bathroom home is located in the sought-after neighborhood of Rusororo in Gasabo District, Kigali. Built in 2025, this modern property features 2,800 square feet of living space on a 0.12-acre lot with beautiful views of the surrounding hills.
+                    </p>
+                    <br>
+                    <p data-en="The home offers contemporary finishes throughout, including modern tiling, a spacious kitchen with ample storage, and a large living and dining area perfect for entertaining. The property includes parking for 2 vehicles, a water tank with pump system, and secure perimeter fencing." 
+                       data-rw="Inzu itanga imyubakire igezweho, harimo amabuye agezweho, igikoni kinini gifite aho kubika byinshi, n'ahantu hanini ho kubamo no kurya byiza ku baheshye. Inzu irimo aho guhagarara imodoka 2, itanki y'amazi hamwe na pompe, n'uruzitiro ruteye isoni.">
+                        The home offers contemporary finishes throughout, including modern tiling, a spacious kitchen with ample storage, and a large living and dining area perfect for entertaining. The property includes parking for 2 vehicles, a water tank with pump system, and secure perimeter fencing.
+                    </p>
+                </div>
+
+                <h2 class="section-title" data-en="Property Details" data-rw="Ibisobanuro by'Inzu">Property Details</h2>
+                
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Property Type:" data-rw="Ubwoko bw'Inzu:">Property Type:</span>
+                        <span class="spec-value" data-en="Single Family Home" data-rw="Inzu y'Umuryango">Single Family Home</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Year Built:" data-rw="Yubatswe:">Year Built:</span>
+                        <span class="spec-value">2020</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Living Area:" data-rw="Ubuso bwo Gutura:">Living Area:</span>
+                        <span class="spec-value">2,800 sq ft</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Lot Size:" data-rw="Ubuso bw'Ikibanza:">Lot Size:</span>
+                        <span class="spec-value">0.12 acres (500 m²)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Bedrooms:" data-rw="Ibyumba byo Kuraramo:">Bedrooms:</span>
+                        <span class="spec-value">4</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Bathrooms:" data-rw="Ibyumba byo Kwiyuhagiramo:">Bathrooms:</span>
+                        <span class="spec-value">3</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Parking Spaces:" data-rw="Aho Guhagarara:">Parking Spaces:</span>
+                        <span class="spec-value">2</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Flooring:" data-rw="Hasi:">Flooring:</span>
+                        <span class="spec-value" data-en="Ceramic Tile" data-rw="Amabuye">Ceramic Tile</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Water Supply:" data-rw="Isoko ry'Amazi:">Water Supply:</span>
+                        <span class="spec-value" data-en="Tank & Pump" data-rw="Itanki na Pompe">Tank & Pump</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Electricity:" data-rw="Amashanyarazi:">Electricity:</span>
+                        <span class="spec-value" data-en="Connected" data-rw="Yahurijwe">Connected</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Fencing:" data-rw="Uruzitiro:">Fencing:</span>
+                        <span class="spec-value" data-en="Perimeter Wall" data-rw="Uruzitiro rw'Ubuso">Perimeter Wall</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label" data-en="Road Access:" data-rw="Umuhanda:">Road Access:</span>
+                        <span class="spec-value" data-en="Tarmac Road" data-rw="Umuhanda Ucike">Tarmac Road</span>
+                    </div>
+                </div>
+
+                <h2 class="section-title" data-en="Features & Amenities" data-rw="Ibikubiyemo">Features & Amenities</h2>
+                
+                <div class="amenities-list">
+                    <div class="amenity-item">✅ <span data-en="Modern Kitchen" data-rw="Igikoni Kigezweho">Modern Kitchen</span></div>
+                    <div class="amenity-item">✅ <span data-en="Master Bedroom with En-suite" data-rw="Icyumba Kinini gifite Ibyumba byo Kwiyuhagiramo">Master Bedroom with En-suite</span></div>
+                    <div class="amenity-item">✅ <span data-en="Spacious Living Room" data-rw="Icyumba Kinini cyo Kubamo">Spacious Living Room</span></div>
+                    <div class="amenity-item">✅ <span data-en="Dining Area" data-rw="Aho Kurira">Dining Area</span></div>
+                    <div class="amenity-item">✅ <span data-en="Garden Space" data-rw="Ubusitani">Garden Space</span></div>
+                    <div class="amenity-item">✅ <span data-en="2-Car Parking" data-rw="Aho Guhagarara Imodoka 2">2-Car Parking</span></div>
+                    <div class="amenity-item">✅ <span data-en="Water Tank & Pump System" data-rw="Itanki na Pompe y'Amazi">Water Tank & Pump System</span></div>
+                    <div class="amenity-item">✅ <span data-en="Perimeter Fencing" data-rw="Uruzitiro">Perimeter Fencing</span></div>
+                    <div class="amenity-item">✅ <span data-en="Modern Ceramic Tiling" data-rw="Amabuye Agezweho">Modern Ceramic Tiling</span></div>
+                    <div class="amenity-item">✅ <span data-en="Built-in Wardrobes" data-rw="Amadulaabu">Built-in Wardrobes</span></div>
+                    <div class="amenity-item">✅ <span data-en="Hill Views" data-rw="Imyemerere y'Imisozi">Hill Views</span></div>
+                    <div class="amenity-item">✅ <span data-en="Quiet Neighborhood" data-rw="Ahantu Hituje">Quiet Neighborhood</span></div>
+                </div>
+
+                <h2 class="section-title" data-en="Location" data-rw="Aho Iherereye">Location</h2>
+                <div class="description">
+                    <p data-en="Rusororo is a developing residential area in Gasabo District, known for its peaceful environment and proximity to essential amenities. The property offers easy access to tarmac roads, schools, shopping centers, and is within a short drive to Kigali city center." 
+                       data-rw="Rusororo ni ahantu ho gutura hateye imbere mu karere ka Gasabo, hazwi ku buryo bw'umutekano n'ahantu hafi y'ibikenewe. Inzu itanga inzira yoroshye ku mihanda icike, amashuri, amaduka, kandi iri hafi y'umujyi wa Kigali.">
+                        Rusororo is a developing residential area in Gasabo District, known for its peaceful environment and proximity to essential amenities. The property offers easy access to tarmac roads, schools, shopping centers, and is within a short drive to Kigali city center.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right-sidebar">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3 data-en="More about this property" data-rw="Byinshi kuri iyi nzu">More about this property</h3>
+                <form>
+                    <div class="form-group">
+                        <label data-en="Full name*" data-rw="Amazina yose*">Full name*</label>
+                        <input type="text" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Email*" data-rw="Imeli*">Email*</label>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Phone*" data-rw="Telefone*">Phone*</label>
+                        <input type="tel" placeholder="+250 xxx xxx xxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="How can we help?" data-rw="Dufashe gute?">How can we help?</label>
+                        <select>
+                            <option data-en="I'm interested in 427 Table Mountain" data-rw="Ndishimye na iyi nzu">I'm interested in this property</option>
+                            <option data-en="Schedule a viewing" data-rw="Gena urebe">Schedule a viewing</option>
+                            <option data-en="Get more information" data-rw="Saba amakuru">Get more information</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Any questions or comments..." data-en="Any questions or comments..." data-rw="Ibibazo cyangwa ibitekerezo..."></textarea>
+                    </div>
+                    <div class="contact-buttons">
+                        <button type="submit" class="btn" data-en="Email agent" data-rw="Wandikira umucuruzi">Email agent</button>
+                        <a href="https://wa.me/250788000000" class="btn" style="background-color: #25D366;" data-en="WhatsApp" data-rw="WhatsApp">WhatsApp</a>
+                        <a href="tel:+250788000000" class="btn" style="background-color: #555;" data-en="Call (250) 788 000 000" data-rw="Hamagara (250) 788 000 000">Call (250) 788 000 000</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Property Facts -->
+            <div class="contact-form">
+                <h3 data-en="Property facts" data-rw="Amakuru y'Inzu">Property facts</h3>
+                <div class="spec-item" style="margin-bottom: 10px;">
+                    <span class="spec-label" data-en="Listed:" data-rw="Yatangajwe:">Listed:</span>
+                    <span class="spec-value">3 days ago</span>
+                </div>
+                <div class="spec-item" style="margin-bottom: 10px;">
+                    <span class="spec-label" data-en="Status:" data-rw="Uko Bimeze:">Status:</span>
+                    <span class="spec-value" data-en="For Sale" data-rw="Iragurishwa">For Sale</span>
+                </div>
+                <div class="spec-item" style="margin-bottom: 10px;">
+                    <span class="spec-label" data-en="Property ID:" data-rw="Nomero y'Inzu:">Property ID:</span>
+                    <span class="spec-value">RUS-2024-001</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label" data-en="Year Built:" data-rw="Yubatswe:">Year Built:</span>
+                    <span class="spec-value">2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-en="Interested? Get in Touch" data-rw="Urabifitemo Inyungu? Twandikire">Interested? Get in Touch</h2>
+            <p data-en="Contact us today to schedule a viewing or request more details." data-rw="Twandikire uyu munsi kugira ngo ugene urebe inzu cyangwa usabe amakuru yindi.">Contact us today to schedule a viewing or request more details.</p>
+            
+            <div class="contact-info">
+                <p><strong data-en="📞 Phone / WhatsApp:" data-rw="📞 Telefone / WhatsApp:">📞 Phone / WhatsApp:</strong> +250 788 000 000 </p>
+                <p><strong>📧 Email:</strong> yourname@email.com </p>
+            </div>
+
+            <a href="https://wa.me/250788000000" class="btn" style="background-color: #25D366;" data-en="Chat on WhatsApp" data-rw="Ganira kuri WhatsApp">Chat on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 House Listing Rusororo. All rights reserved.</p>
+    </footer>
+
+    <!-- Enhanced Photo Modal -->
+    <div id="photo-modal" class="photo-modal" onclick="closePhotoModal(event)">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePhotoModal()">&times;</span>
+            <button class="modal-nav modal-prev" onclick="prevPhoto()">&#8249;</button>
+            <img id="modal-image" class="modal-image" src="" alt="">
+            <button class="modal-nav modal-next" onclick="nextPhoto()">&#8250;</button>
+            <div class="modal-caption" id="modal-caption"></div>
+            <div class="modal-counter" id="modal-counter"></div>
+        </div>
+    </div>
+
+    <script>
+        // --- ENHANCED JAVASCRIPT FUNCTIONALITY ---
+
+        // Photo gallery data
+        const photos = [
+            { src: 'house_photos/Hos1.jpg', caption: 'Main house exterior view' },
+            { src: 'house_photos/Hos2.jpg', caption: 'Front entrance and garden' },
+            { src: 'house_photos/Hos3.jpg', caption: 'Spacious living room' },
+            { src: 'house_photos/Hos4.jpg', caption: 'Modern kitchen' },
+            { src: 'house_photos/Hos5.jpg', caption: 'Master bedroom' },
+            { src: 'house_photos/Hos6.jpg', caption: 'Bathroom' },
+            { src: 'house_photos/Hos7.jpg', caption: 'Garden and outdoor space' },
+            { src: 'house_photos/Hos8.jpg', caption: 'Side view of property' },
+            { src: 'house_photos/Hos9.jpg', caption: 'Additional view' },
+            { src: 'house_photos/Hos11.jpg', caption: 'Interior details' }
+        ];
+
+        let currentPhotoIndex = 0;
+
+        // Language switching functionality
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-en][data-rw]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                } else if (lang === 'rw') {
+                    element.textContent = element.getAttribute('data-rw');
+                }
+            });
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && savedLang === 'rw') {
+                // Simulate click on Kinyarwanda button
+                const rwBtn = document.querySelectorAll('.lang-btn')[1];
+                if (rwBtn) {
+                    rwBtn.click();
+                }
+            }
+        });
+
+        // Enhanced photo modal functionality
+        function openPhotoModal(index) {
+            currentPhotoIndex = index;
+            updatePhotoModal();
+            document.getElementById('photo-modal').style.display = 'flex';
+        }
+
+        function closePhotoModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            document.getElementById('photo-modal').style.display = 'none';
+        }
+
+        function nextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            updatePhotoModal();
+        }
+
+        function prevPhoto() {
+            currentPhotoIndex = currentPhotoIndex === 0 ? photos.length - 1 : currentPhotoIndex - 1;
+            updatePhotoModal();
+        }
+
+        function updatePhotoModal() {
+            const photo = photos[currentPhotoIndex];
+            document.getElementById('modal-image').src = photo.src;
+            document.getElementById('modal-caption').textContent = photo.caption;
+            document.getElementById('modal-counter').textContent = `${currentPhotoIndex + 1} of ${photos.length}`;
+        }
+
+        // Keyboard navigation for photo modal
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('photo-modal');
+            if (modal.style.display === 'flex') {
+                switch(event.key) {
+                    case 'Escape':
+                        closePhotoModal();
+                        break;
+                    case 'ArrowLeft':
+                        prevPhoto();
+                        break;
+                    case 'ArrowRight':
+                        nextPhoto();
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
