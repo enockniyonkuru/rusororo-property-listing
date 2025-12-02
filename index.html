@@ -411,7 +411,7 @@
         .main-photo img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: transform 0.3s;
         }
 
@@ -740,12 +740,12 @@
                 </div>
                 <div class="gallery-main">
                     <div class="main-photo" onclick="openPhotoModal(0)">
-                        <img src="house_photos/Hos5.jpg" alt="Main house view">
+                        <img src="house_photos/Recovered_78.jpg" alt="Main house view" style="object-fit: contain;">
                         <button class="view-all-btn" data-en="View all photos" data-rw="Reba amafoto yose">View all photos</button>
                     </div>
                     <div class="photo-thumbnails">
                         <div class="thumbnail-photo" onclick="openPhotoModal(1)">
-                            <img src="house_photos/Hos6.jpg" alt="Bathroom">
+                            <img src="house_photos/Recovered_81.jpg" alt="House exterior" style="object-fit: contain;">
                         </div>
                         <div class="thumbnail-photo" onclick="openPhotoModal(2)">
                             <img src="house_photos/Hos7.jpg" alt="Garden and outdoor space">
@@ -953,7 +953,9 @@
 
         // Photo gallery data
         const photos = [
-            { src: 'house_photos/Hos1.jpg', caption: 'Main house exterior view' },
+            { src: 'house_photos/Recovered_78.jpg', caption: 'Main house exterior view' },
+            { src: 'house_photos/Recovered_81.jpg', caption: 'House exterior' },
+            { src: 'house_photos/Hos1.jpg', caption: 'Roof details' },
             { src: 'house_photos/Hos5.jpg', caption: 'Master bedroom' },
             { src: 'house_photos/Hos6.jpg', caption: 'Bathroom' },
             { src: 'house_photos/Hos7.jpg', caption: 'Garden and outdoor space' },
@@ -976,8 +978,6 @@
             { src: 'house_photos/Recovered_69.jpg', caption: 'Hallway view' },
             { src: 'house_photos/Recovered_71.jpg', caption: 'Exterior features' },
             { src: 'house_photos/Recovered_72.jpg', caption: 'Garden area' },
-            { src: 'house_photos/Recovered_78.jpg', caption: 'Scenic view' },
-            { src: 'house_photos/Recovered_81.jpg', caption: 'Home features' },
             { src: 'house_photos/Recovered_82.jpg', caption: 'Interior details' },
             { src: 'house_photos/Recovered_83.jpg', caption: 'Entrance view' },
             { src: 'house_photos/Recovered_84.jpg', caption: 'Side view' },
