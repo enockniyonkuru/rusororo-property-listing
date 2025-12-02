@@ -129,6 +129,31 @@
             color: var(--text-dark);
             font-weight: bold;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.5rem;
+        }
+
+        .sale-price {
+            color: #e74c3c;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .discount-badge {
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
         }
 
         .price-secondary {
@@ -680,8 +705,15 @@
                 <h1 data-en="Beautiful 4 Bedroom Home in Rusororo, Kigali" data-rw="Inzu Nziza Ifite Ibyumba 4 i Rusororo, Kigali">Beautiful 4 Bedroom Home in Rusororo, Kigali</h1>
                 <div class="property-address" data-en="Rusororo, Gasabo District, Kigali, Rwanda" data-rw="Rusororo, Akarere ka Gasabo, Kigali, Rwanda">Rusororo, Gasabo District, Kigali, Rwanda</div>
                 <div class="price-tag">
-                    100,000,000 RWF
-                    <span class="price-secondary" data-en="($70,000 USD)" data-rw="($70,000 Amadorali)">($70,000 USD)</span>
+                    <div>
+                        <span class="original-price">100,000,000 RWF</span>
+                        <div class="sale-price">90,000,000 RWF</div>
+                    </div>
+                    <div class="discount-badge">ON SALE!</div>
+                    <div>
+                        <span class="original-price" data-en="($70,000 USD)" data-rw="($70,000 Amadorali)">($70,000 USD)</span>
+                        <div class="sale-price" data-en="($60,000 USD)" data-rw="($60,000 Amadorali)">($60,000 USD)</div>
+                    </div>
                 </div>
                 <div class="property-stats">
                     <div class="stat-item">
