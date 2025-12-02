@@ -698,7 +698,7 @@
         </div>
     </nav>
 
-    <div class="main-layout">
+    <div class="main-layout" id="home">
         <div class="left-content">
             <!-- Property Header -->
             <div class="property-header">
@@ -733,10 +733,10 @@
             </div>
 
             <!-- Photo Gallery -->
-            <div class="photo-gallery">
+            <div class="photo-gallery" id="gallery">
                 <div class="gallery-header">
                     <h3 class="gallery-title" data-en="Photos" data-rw="Amafoto">Photos</h3>
-                    <span class="photo-count">25+ photos</span>
+                    <span class="photo-count">29 photos</span>
                 </div>
                 <div class="gallery-main">
                     <div class="main-photo" onclick="openPhotoModal(0)">
@@ -753,7 +753,7 @@
                         <div class="thumbnail-photo" onclick="openPhotoModal(3)">
                             <img src="house_photos/Hos4.jpg" alt="Kitchen">
                         </div>
-                        <div class="thumbnail-photo more-photos" onclick="openPhotoModal(4)" data-count="+20">
+                        <div class="thumbnail-photo more-photos" onclick="openPhotoModal(4)" data-count="">
                             <img src="house_photos/Hos5.jpg" alt="More photos">
                         </div>
                     </div>
@@ -761,7 +761,7 @@
             </div>
 
             <!-- Property Details -->
-            <div class="details-main">
+            <div class="details-main" id="details">
                 <h2 class="section-title" data-en="Property Overview" data-rw="Incamake y'Inzu">Property Overview</h2>
                 
                 <div class="description">
@@ -855,6 +855,8 @@
                        data-rw="Rusororo ni ahantu ho gutura hateye imbere mu karere ka Gasabo, hazwi ku buryo bw'umutekano n'ahantu hafi y'ibikenewe. Inzu iri mu mahoro atukura Ntare Arena na Rusororo Sector Office. Itanga inzira yoroshye ku mihanda icike, amashuri, amaduka, kandi iri hafi y'umujyi wa Kigali.">
                         Rusororo is a developing residential area in Gasabo District, known for its peaceful environment and proximity to essential amenities. The property is within walking distance from Ntare Arena and Rusororo Sector Office. It offers easy access to tarmac roads, schools, shopping centers, and is within a short drive to Kigali city center.
                     </p>
+                    <p style="margin-top: 15px;\"><strong data-en="Coordinates:" data-rw="Ubwato:">Coordinates:</strong> 1°58'16"S 30°12'03"E</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8144328265546!2d30.20079!3d-1.97111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d65f8b3c3c3c3d%3A0x9c3c3c3c3c3c3c3c!2sRusororo%2C%201%C2%B058%2716%22S%2030%C2%B012%2703%22E!5e0!3m2!1sen!2srw!4v1670000000000" width="100%" height="300" style="border:0; border-radius: 8px; margin-top: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -960,7 +962,26 @@
             { src: 'house_photos/Hos7.jpg', caption: 'Garden and outdoor space' },
             { src: 'house_photos/Hos8.jpg', caption: 'Side view of property' },
             { src: 'house_photos/Hos9.jpg', caption: 'Additional view' },
-            { src: 'house_photos/Hos11.jpg', caption: 'Interior details' }
+            { src: 'house_photos/Hos11.jpg', caption: 'Interior details' },
+            { src: 'house_photos/Hos12.jpg', caption: 'Bedroom view' },
+            { src: 'house_photos/Hos13.jpg', caption: 'Living space' },
+            { src: 'house_photos/Hos14.jpg', caption: 'Property exterior' },
+            { src: 'house_photos/Hos19(1).jpg', caption: 'Garden area' },
+            { src: 'house_photos/Hos20.jpg', caption: 'Outdoor entertaining space' },
+            { src: 'house_photos/Hos23.jpg', caption: 'Interior design' },
+            { src: 'house_photos/Hos24.jpg', caption: 'Hallway view' },
+            { src: 'house_photos/Hos26.jpg', caption: 'Room details' },
+            { src: 'house_photos/Hos27.jpg', caption: 'Property landscape' },
+            { src: 'house_photos/Hos28.jpg', caption: 'Exterior features' },
+            { src: 'house_photos/Hos29.jpg', caption: 'Interior space' },
+            { src: 'house_photos/Hos30.jpg', caption: 'Property grounds' },
+            { src: 'house_photos/Hos32.jpg', caption: 'Scenic view' },
+            { src: 'house_photos/Hos33.jpg', caption: 'Home features' },
+            { src: 'house_photos/Hos34.jpg', caption: 'Property highlights' },
+            { src: 'house_photos/Hos35(1).jpg', caption: 'Interior perspective' },
+            { src: 'house_photos/Hos36(1).jpg', caption: 'Property details' },
+            { src: 'house_photos/Hos37.jpg', caption: 'Final exterior view' },
+            { src: 'house_photos/Recovered_3.jpg', caption: 'Property view' }
         ];
 
         let currentPhotoIndex = 0;
